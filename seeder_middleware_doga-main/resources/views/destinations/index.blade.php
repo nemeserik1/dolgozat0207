@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>INDEX</title>
 </head>
 <body>
     <h1>Destinations</h1>
     <ol>
         @foreach ($destinations as $dest)
-            <li>{{$dest->id}}</li>
+            <li>{{$dest->destination}}</li>
             <ul>
                 <li>{{$dest->destination}}</li>
                 <li>{{$dest->price}}</li>
