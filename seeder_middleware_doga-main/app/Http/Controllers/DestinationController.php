@@ -13,4 +13,10 @@ class DestinationController extends Controller
         return view('destinatins.index', compact('destinations'));
     }
 
+    public function show($id)
+    {
+        $destination = Destination::findOrFail($id);
+        return view('destination.show', compact('destination'));
+    }
+
 }

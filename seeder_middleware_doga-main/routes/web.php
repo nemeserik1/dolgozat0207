@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('destinations', [DestinationController::class, 'index'])->name('destinations.index');
 Route::middleware(['auth'])->group(function (){
-    Route::get('cars/{id}', [DestinationController::class, 'show'])->name('destinations.show');
+    Route::get('destinations/{id}', [DestinationController::class, 'show'])->name('destinations.show');
 });
 
 require __DIR__.'/auth.php';
