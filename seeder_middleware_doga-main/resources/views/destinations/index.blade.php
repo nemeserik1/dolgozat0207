@@ -11,9 +11,6 @@
         @foreach ($destinations as $dest)
             <li>{{$dest->destination}}</li>
             <ul>
-                <li>{{$dest->destination}}</li>
-                <li>{{$dest->price}}</li>
-                <li>{{$dest->departure}}</li>
                 @if (auth()->check() && auth()->user()->role == 'user')
                     <form action="{{ route('destination.show', $dest->id) }}" method="GET">
                         <input type="submit" value="Kirándulás">

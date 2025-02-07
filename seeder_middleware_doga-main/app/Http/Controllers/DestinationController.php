@@ -16,7 +16,7 @@ class DestinationController extends Controller
     public function show($id)
     {
         $destination = Destination::findOrFail($id);
-        return view('destination.show', compact('destination'));
+        return view('destinations.show', compact('destinations'));
     }
 
 }
