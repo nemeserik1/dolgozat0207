@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 //Route::get('rents', [RentController::class, 'index'])->middleware(AdminMiddleware::class)->name('rents.index');
+
+Route::middleware('auth')->group(function(){
+    Route::get('destinations', [DestinationController::class, 'create'])->name('destinations.create');
+    //Route::post('destinations', [DestinationController::class, 'store'])->name('cars.store');
+});
 
 require __DIR__.'/auth.php';
