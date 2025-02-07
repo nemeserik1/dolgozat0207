@@ -20,9 +20,14 @@ Route::middleware('auth')->group(function () {
 
 //Route::get('rents', [RentController::class, 'index'])->middleware(AdminMiddleware::class)->name('rents.index');
 
-Route::middleware('auth')->group(function(){
-    Route::get('destinations', [DestinationController::class, 'create'])->name('destinations.create');
+/*Route::middleware('auth')->group(function(){
+    Route::get('destinations', [DestinationController::class, 'index'])->name('destinations.index');
     //Route::post('destinations', [DestinationController::class, 'store'])->name('cars.store');
+}); */
+
+Route::get('destinations', [DestinationController::class, 'index'])->name('destinations.index');
+Route::middleware(['auth'])->group(function (){
+    Route::get('cars/{id}', [DestinationController::class, 'show'])->name('destinations.show');
 });
 
 require __DIR__.'/auth.php';
