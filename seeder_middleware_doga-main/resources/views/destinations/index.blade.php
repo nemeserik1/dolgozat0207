@@ -12,7 +12,7 @@
             <li>{{$dest->destination}}</li>
             <ul>
                 @if (auth()->check() && auth()->user()->role == 'user')
-                    <form action="{{ route('destination.show', $dest->id) }}" method="GET">
+                    <form action="{{ route('destinations.show', $dest->id) }}" method="GET">
                         <input type="submit" value="Kirándulás">
                     </form>
                 @endif
